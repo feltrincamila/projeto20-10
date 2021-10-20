@@ -1,52 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv=”content-type” content="text/html;" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="keywords" content="tags, que, eu, quiser, usar, para, os, robos, do, google" />
-    <title>Fala Fera - Bootstrap - Aula 2</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form de Registro com validações em JS</title>
+  <link rel="stylesheet" href="teste.css">
 
-	<!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-        
-    <!-- ESTILOS PARA ESTA PÁGINA -->
-    <!-- Nesse caso, este estilo é apenas para inserir imagens -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-    <!-- JAVASCRIPT E JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </head>
-		<!-- Exemplo de menu responsivo usando o Bootstrap          -->
-		<!-- Desenvolvido por Jefferson Jamess do site falafera.com -->
-		<!-- Dúvidas? Entre no canal: http://youtube.com/falafera   -->
 <body>
-<!-- INÍCIO DO MENU SUPERIOR -->
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#links-menu" style="background-color: white;">
-					<i class="material-icons">menu</i>
-				</button>
-			</div>
-			
-
-			<nav id="links-menu" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Livros</a></li>
-					<li><a href="#">Atacado</a></li>
-					<li><a href="#">Quem Somos</a></li>
-					<li><a href="#">Contato</a></li>
-				</ul>
-			</nav>
-		</div>
-	</nav>
-<!-- FIM DO MENU SUPERIOR -->
-
+  <div id="main-container">
+    <h1>Cadastre-se para acessar o sistema</h1>
+    <form id="register-form" action="">
+      <div class="full-box">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" placeholder="Digite seu e-mail" data-min-length="2" data-email-validate>
+      </div>
+      <div class="half-box spacing">
+          <label for="name">Nome</label>
+          <input type="text" name="name" id="name" placeholder="Digite seu nome" data-required data-min-length="3" data-max-length="16">
+      </div>
+      <div class="half-box">
+          <label for="lastname">Sobrenome</label>
+          <input type="text" name="lastname" id="lastname" placeholder="Digite seu sobrenome" data-required data-only-letters>
+      </div>
+      <div class="half-box spacing">
+        <label for="lastname">Senha</label>
+        <input type="password" name="password" id="password" placeholder="Digite sua senha" data-password-validate data-required>
+      </div>
+      <div class="half-box">
+        <label for="passconfirmation">Confirmação de senha</label>
+        <input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha" data-equal="password">
+      </div>
+      <div>
+        <input type="checkbox" name="agreement" id="agreement">
+        <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a></label>
+      </div>
+      <div class="full-box">
+        <input id="btn-submit" type="submit" value="Registrar">
+      </div>
+    </form>
+  </div>
+  <p class="error-validation template"></p>
+  <script src="teste.js"></script>
 </body>
 </html>
